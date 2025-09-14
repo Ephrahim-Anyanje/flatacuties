@@ -1,36 +1,51 @@
-const namesList = document.getElementById("names");
-const animalName = document.getElementById("animal-name");
-const animalImage = document.getElementById("animal-image");
+// Get DOM elements
+const characterBar = document.getElementById("character-bar");
+const characterImage = document.getElementById("character-image");
+const characterName = document.getElementById("character-name");
 const voteCount = document.getElementById("vote-count");
 const voteButton = document.getElementById("vote-button");
+const resetButton = document.getElementById("reset-button");
 
-let currentVotes = 0;
+let currentCharacter = null;
 
-// STEP 1: Fetch all animals
-fetch("http://localhost:3000/characters")
-  .then((res) => res.json())
-  .then((data) => {
-    data.forEach((animal) => {
-      const li = document.createElement("li");
-      li.textContent = animal.name;
+// URL of the JSON server
+const BASE_URL = "http://localhost:3000/characters";
 
-      // STEP 2: Click to show details
-      li.addEventListener("click", () => {
-        showAnimalDetails(animal);
-      });
-
-      namesList.appendChild(li);
+// Fetch characters from the server and display their names
+fetch(BASE_URL)
+  .then((response) => response.json())
+  .then((characters) => {
+    characters.forEach((character) => {
+      const span = document.createElement("span");
+      span.textContent = character.name;
+      span.addEventListener("click", () => displayCharacter(character));
+      characterBar.appendChild(span);
     });
+  })
+  .catch((error) => {
+    console.error("Error fetching characters:", error);
   });
 
-function showAnimalDetails(animal) {
-  animalName.textContent = animal.name;
-  animalImage.src = animal.image;
-  voteCount.textContent = animal.votes;
-  currentVotes = animal.votes;
-
-  voteButton.onclick = () => {
-    currentVotes += 1;
-    voteCount.textContent = currentVotes;
-  };
+// Display selected character details
+function displayCharacter(character) {
+  currentCharacter = character;
+  characterImage.src = character.image;
+  characterName.textContent = character.name;
+  voteCount.textContent = character.votes;
 }
+
+// Handle vote button click
+voteButton.addEventListener("click", () => {
+  if (currentCharacter) {
+    currentCharacter.votes += 1;
+    voteCount.textContent = currentCharacter.votes;
+  }
+});
+
+// Handle reset button click
+resetButton.addEventListener("click", () => {
+  if (currentCharacter) {
+    currentCharacter.votes = 0;
+    voteCount.textContent = currentCharacter.votes;
+  }
+});
