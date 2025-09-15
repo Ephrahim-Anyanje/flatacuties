@@ -2,32 +2,32 @@
   "characters": [
     {
       "id": 1,
-      "name": "Lion",
-      "image": "https://cdn.pixabay.com/photo/2023/06/29/10/33/lion-8096155_1280.png",
+      "name": "Mr. Cute",
+      "image": "https://thumbs.gfycat.com/EquatorialIckyCat-max-1mb.gif",
       "votes": 0
     },
     {
       "id": 2,
-      "name": "Penguin",
-      "image": "https://cdn.pixabay.com/photo/2023/01/11/08/05/humboldt-penguin-7711121_1280.jpg",
+      "name": "Mx. Monkey",
+      "image": "https://thumbs.gfycat.com/FatalInnocentAmericanshorthair-max-1mb.gif",
       "votes": 0
     },
     {
       "id": 3,
-      "name": "Red Panda",
-      "image": "https://cdn.pixabay.com/photo/2022/05/13/22/14/red-panda-7194668_960_720.jpg",
+      "name": "Ms. Zebra",
+      "image": "https://media2.giphy.com/media/20G9uNqE3K4dRjCppA/source.gif",
       "votes": 0
     },
     {
       "id": 4,
-      "name": "Koala",
-      "image": "https://cdn.pixabay.com/photo/2015/03/30/13/50/australia-699228_960_720.jpg",
+      "name": "Dr. Lion",
+      "image": "http://bestanimations.com/Animals/Mammals/Cats/Lions/animated-lion-gif-11.gif",
       "votes": 0
     },
     {
       "id": 5,
-      "name": "Bunny",
-      "image": "https://cdn.pixabay.com/photo/2025/08/22/01/18/rabbit-9788945_1280.jpg",
+      "name": "Mme. Panda",
+      "image": "https://media.giphy.com/media/ALalVMOVR8Qw/giphy.gif",
       "votes": 0
     }
   ]
